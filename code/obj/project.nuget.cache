@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y/1rxeyUoohalgWoSBcjZ7OwCN20qfl3v3Rpc07bERo22Dj8Jfvlq7Z3rGrqJ8eWJcTH8i7RG/AM8lo9Vs4xqA==",
+  "success": true,
+  "projectFilePath": "/home/pedro/PI/app/app.csproj",
+  "expectedPackageFiles": [
+    "/home/pedro/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/pedro/.nuget/packages/selenium.webdriver/4.1.0/selenium.webdriver.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
