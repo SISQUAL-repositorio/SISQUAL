@@ -1,3 +1,6 @@
-2022/03/19-23:28:43.636 5 Reusing MANIFEST /home/pedro/PI/app/profile/Default/Session Storage/MANIFEST-000001
-2022/03/19-23:28:43.637 5 Recovering log #3
-2022/03/19-23:28:43.637 5 Reusing old log /home/pedro/PI/app/profile/Default/Session Storage/000003.log 
+2022/03/21-09:10:09.902 3 Reusing MANIFEST /home/pedro/PI/dev_sisqual/code/chrome_profile/Default/Session Storage/MANIFEST-000001
+2022/03/21-09:10:09.916 3 Recovering log #3
+2022/03/21-09:10:09.921 3 Reusing old log /home/pedro/PI/dev_sisqual/code/chrome_profile/Default/Session Storage/000003.log 
+2022/03/21-09:10:24.084 5 Level-0 table #5: started
+2022/03/21-09:10:24.090 5 Level-0 table #5: 22927 bytes OK
+2022/03/21-09:10:24.093 5 Delete type=0 #3

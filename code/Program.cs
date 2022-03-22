@@ -2,6 +2,8 @@
 using OpenQA.Selenium.Chrome;
 using Newtonsoft.Json;
 
+using System.Collections.ObjectModel;
+
 namespace app
 {
 class Program {
@@ -26,6 +28,7 @@ class Program {
         driver.Navigate().GoToUrl(first_search_result);
         pause(driver, 2); // wait for all page to load to see if cookie pop-up opens
         
+        
 
         if (cookiePopUpDetected(driver)) 
         {
@@ -49,7 +52,7 @@ class Program {
     {
         ChromeOptions chromeOptions = new ChromeOptions();
         if (headless) chromeOptions.AddArgument("headless"); //if headless true means we want the driver to work without opening the browser
-        chromeOptions.AddArgument("user-data-dir=profile"); //using a chrome user profile dont need to accept again cookies
+        chromeOptions.AddArgument("user-data-dir=chrome_profile"); //using a chrome user profile dont need to accept again cookies
     
         IWebDriver chromeDriver;
         chromeDriver = new ChromeDriver(chromeDriverPath, chromeOptions);
@@ -71,12 +74,16 @@ class Program {
     {
         driver.Navigate().GoToUrl("https://google.com");
         
-        if (cookiePopUpDetected(driver)) 
+        string currentHandle = driver.CurrentWindowHandle;
+        
+        ReadOnlyCollection<String> originalHandles = driver.WindowHandles;
+
+        /*if (cookiePopUpDetected(driver)) 
         {
             if (!checkGoogleCookies(driver)) {
                 return false;
             }
-        }
+        }*/
 
         IWebElement search_bar = driver.FindElement(By.Name("q"));
         try 

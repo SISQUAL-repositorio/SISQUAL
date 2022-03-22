@@ -88,11 +88,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pedro/PI/app/app.csproj",
+      "projectUniqueName": "/home/pedro/PI/dev_sisqual/code/app.csproj",
       "projectName": "app",
-      "projectPath": "/home/pedro/PI/app/app.csproj",
+      "projectPath": "/home/pedro/PI/dev_sisqual/code/app.csproj",
       "packagesPath": "/home/pedro/.nuget/packages/",
-      "outputPath": "/home/pedro/PI/app/obj/",
+      "outputPath": "/home/pedro/PI/dev_sisqual/code/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/pedro/.nuget/NuGet/NuGet.Config"

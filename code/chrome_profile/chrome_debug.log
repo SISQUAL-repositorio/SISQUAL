@@ -1,5 +1,7 @@
-[44783:44783:0319/232919.682325:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
-[44825:44825:0319/232920.255692:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.
-[44826:45030:0319/232929.779722:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
-[44826:45030:0319/232929.779976:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
-[44783:44783:0319/232929.811015:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[5240:5240:0322/150454.414233:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
+[5282:5282:0322/150455.592717:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.
+[5240:5240:0322/150543.662911:INFO:CONSOLE(81)] "Unrecognized feature: 'attribution-reporting'.", source: https://www.googleadservices.com/pagead/conversion.js (81)
+[5240:5240:0322/150543.725632:INFO:CONSOLE(24)] "[Meta Pixel] - Removed URL query parameters due to potential violations.", source: https://connect.facebook.net/en_US/fbevents.js (24)
+[5240:5240:0322/150601.345578:WARNING:controller_impl.cc(1184)] Background download complete, client: 6, completion type: 0, file size:265059
+[5283:5447:0322/150616.034994:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[5240:5240:0322/150616.046881:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
