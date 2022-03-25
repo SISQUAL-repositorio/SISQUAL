@@ -14,10 +14,8 @@ namespace ProjetoSisqualDB
 {
     internal class Program
     {
-
         static void Main(string[] agrs)
         {
-
             webLinkRetrieve();
             Console.ReadLine();
         }
@@ -34,9 +32,8 @@ namespace ProjetoSisqualDB
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("headless");
 
-            //saddsad
             //Initialize Driver (on Headlessmode add "option" before created on ChromeDriver)
-            IWebDriver driver = new ChromeDriver(@"C:\Users\Pedro.Costa\Desktop\ChromeDriver",option);
+            IWebDriver driver = new ChromeDriver(@"C:\Users\Pedro.Costa\Desktop\ChromeDriver");
             driver.Navigate().GoToUrl($"https://google.com/search?q={inputPesquisa}");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Window.Maximize();
@@ -122,25 +119,36 @@ namespace ProjetoSisqualDB
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(source);
 
-            List<String> possible_classes_Keywords = new List<string>(new[] { "shops", "store" });
-
-            //List<HtmlNode> LocationsHtml = new List<HtmlNode>();
+            List<String> possible_classes_Keywords = new List<String>(new[] { "shop","store" });
 
             //Find store divs
-        
-                 var LocationsHtml = htmlDocument.DocumentNode.Descendants("div")
-                .Where(node => possible_classes_Keywords.Contains(node.GetAttributeValue("class", "")))
-                .ToList();
-            
-            
+            List<HtmlNode> LocationsHtml = new List<HtmlNode>();
+            foreach (var keyword in possible_classes_Keywords)
+	        {
+                 LocationsHtml = htmlDocument.DocumentNode.Descendants("div")
+                .Where(node => node.GetAttributeValue("class", "")
+                .Contains(keyword)).ToList();
+                if(LocationsHtml.Count > 0)
+                {
+                    break;
+                }
+	        }
+
+            //Analisar dados 
+            //analyseHtmlData(LocationsHtml);
             
             //Find where store info is located
-            var LocationsItems = LocationsHtml[0].Descendants("div")
+            List<HtmlNode> LocationsItems = new List<HtmlNode>();
+            foreach (var keyword in possible_classes_Keywords)
+	        { 
+                 LocationsItems = LocationsHtml[0].Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "")
-                .Contains("shop")).ToList();
-
-
-            //List<String> LocationData = new List<string>() ;
+                .Contains(keyword)).ToList();
+                if(LocationsItems.Count > 0)
+                {
+                    break;
+                }
+	        }
             Console.Clear();
 
             // Get all the stores found
@@ -154,7 +162,7 @@ namespace ProjetoSisqualDB
                 //Separate data for each store
                 foreach (var storeInfo in storeData)
                 {
-                    Console.WriteLine(storeInfo.GetAttributeValue("class","") + ":" + storeInfo.InnerText);
+                    Console.WriteLine(storeInfo.GetAttributeValue("class","") + ": " + storeInfo.InnerText);
                 }
                 Console.WriteLine();
             }
@@ -163,7 +171,7 @@ namespace ProjetoSisqualDB
             Console.WriteLine();
         }
 
-
+       
 
     }
 }
