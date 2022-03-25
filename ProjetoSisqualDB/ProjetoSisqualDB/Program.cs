@@ -34,6 +34,7 @@ namespace ProjetoSisqualDB
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("headless");
 
+            //a
             //Initialize Driver (on Headlessmode add "option" before created on ChromeDriver)
             IWebDriver driver = new ChromeDriver(@"C:\Users\Pedro.Costa\Desktop\ChromeDriver",option);
             driver.Navigate().GoToUrl($"https://google.com/search?q={inputPesquisa}");
