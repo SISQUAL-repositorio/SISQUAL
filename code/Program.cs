@@ -12,7 +12,7 @@ class Program {
         log("Initializing the chrome driver...");
         IWebDriver driver = initializeDriver(".", false); // init the chrome driver
         
-        String search_word = "worten";
+        String search_word = "stradivarius";
         log("Doing a google search for: " + search_word);
         if (!doGoogleSearch(driver, search_word)) 
         {
@@ -27,8 +27,6 @@ class Program {
         log("Navigating to " + first_search_result);
         driver.Navigate().GoToUrl(first_search_result);
         pause(driver, 2); // wait for all page to load to see if cookie pop-up opens
-        
-        
 
         if (cookiePopUpDetected(driver)) 
         {
@@ -52,7 +50,8 @@ class Program {
     {
         ChromeOptions chromeOptions = new ChromeOptions();
         if (headless) chromeOptions.AddArgument("headless"); //if headless true means we want the driver to work without opening the browser
-        chromeOptions.AddArgument("user-data-dir=chrome_profile"); //using a chrome user profile dont need to accept again cookies
+        //chromeOptions.AddArgument("user-data-dir=chrome_profile"); //using a chrome user profile dont need to accept again cookies
+        chromeOptions.AddArguments("--lang=es");
     
         IWebDriver chromeDriver;
         chromeDriver = new ChromeDriver(chromeDriverPath, chromeOptions);
@@ -78,12 +77,12 @@ class Program {
         
         ReadOnlyCollection<String> originalHandles = driver.WindowHandles;
 
-        /*if (cookiePopUpDetected(driver)) 
+        if (cookiePopUpDetected(driver)) 
         {
             if (!checkGoogleCookies(driver)) {
                 return false;
             }
-        }*/
+        }
 
         IWebElement search_bar = driver.FindElement(By.Name("q"));
         try 
@@ -173,7 +172,7 @@ class Program {
                 
         List<IWebElement> useful_links = new List<IWebElement> {};
 
-        foreach (IWebElement link in all_links) 
+        foreach (IWebElement link in all_links)
         {
             try
             {
@@ -181,6 +180,8 @@ class Program {
                 {
                     continue;
                 }
+
+                Console.WriteLine(link.Text);
                 
                 if (link.Displayed && link.Enabled && correctKeyWord(keyWords, link.Text)) 
                 {
@@ -230,7 +231,7 @@ class Program {
 
         foreach (String keyWord in keyWords) 
         {
-            if (word.Contains(keyWord)) 
+            if (word.Contains(keyWord))
             {
                 return true;
             }
