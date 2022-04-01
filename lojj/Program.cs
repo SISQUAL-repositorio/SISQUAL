@@ -13,6 +13,7 @@ class Program {
         
         String search_word = "worten";
         driver.Navigate().GoToUrl("https://www.lojj.pt/marcas/");
+        
         IWebElement search_bar = driver.FindElement(By.Name("search"));
         search_bar.SendKeys(search_word + Keys.Enter);
         
@@ -24,9 +25,10 @@ class Program {
         
         foreach(String link in links) {
             driver.Navigate().GoToUrl(link);
-            List<IWebElement> lojas = driver.FindElements(By.ClassName("//div[@class='listBox_pesquisa']")).ToList();
-            List<IWebElement> lojas_white = driver.FindElements(By.ClassName("//div[@class='listBox_pesquisa white']")).ToList();
+            List<IWebElement> lojas = driver.FindElements(By.CssSelector("div[class='listBox_pesquisa ']")).ToList();
+            List<IWebElement> lojas_white = driver.FindElements(By.CssSelector("div[class='listBox_pesquisa white ']")).ToList();
             Console.WriteLine(lojas.Count + lojas_white.Count);
+            
         }
 
         closeDriver(driver);

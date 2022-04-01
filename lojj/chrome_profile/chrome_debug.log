@@ -1,8 +1,7 @@
-[3981:3981:0321/090039.707690:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
-[4023:4023:0321/090041.025956:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.
-[3981:3981:0321/090046.154112:INFO:CONSOLE(2)] "Powered by AMP ⚡ HTML – Version 2202142035000 https://www.lojj.pt/pesquisa.php?dis=&main=Pesquisar&search=worten&p=2", source: https://cdn.ampproject.org/rtv/012202142035000/amp4ads-v0.mjs (2)
-[3981:3981:0321/090046.199896:INFO:CONSOLE(2)] "Unrecognized feature: 'attribution-reporting'.", source: https://cdn.ampproject.org/rtv/012202142035000/v0/amp-ad-exit-0.1.mjs (2)
-[4024:4046:0321/090050.792871:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
-[4024:4049:0321/090050.799064:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
-[4024:4049:0321/090050.799119:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
-[3981:3981:0321/090050.809083:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[13372:13372:0401/110521.792046:WARNING:bluez_dbus_manager.cc(248)] Floss manager not present, cannot set Floss enable/disable.
+[13414:13414:0401/110522.378213:ERROR:sandbox_linux.cc(377)] InitializeSandbox() called with multiple threads in process gpu-process.
+[13415:13429:0401/110524.893905:WARNING:spdy_session.cc(3541)] Received HEADERS for invalid stream 7
+[13415:13430:0401/110528.340093:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[13415:13428:0401/110528.349967:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[13415:13428:0401/110528.350102:WARNING:sqlite_persistent_store_backend_base.cc(165)] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:213 to client_task_runner_.
+[13372:13372:0401/110528.374006:WARNING:pref_notifier_impl.cc(40)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
