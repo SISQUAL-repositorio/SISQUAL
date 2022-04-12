@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NwrMLCHYlCmNw7m+U2kgSQpMdh/uhFo38PhLipeiSuqy6GzeszvthF4+ezy8lM+ezIjzCU2UgU1L+qDHoeLbfw==",
+  "success": true,
+  "projectFilePath": "/home/pedro/PI/dev_sisqual/lojj/lojj.csproj",
+  "expectedPackageFiles": [
+    "/home/pedro/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/pedro/.nuget/packages/selenium.webdriver/4.1.0/selenium.webdriver.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

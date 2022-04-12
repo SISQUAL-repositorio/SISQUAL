@@ -1,0 +1,17 @@
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.csproj.AssemblyReference.cache
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.GeneratedMSBuildEditorConfig.editorconfig
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.AssemblyInfoInputs.cache
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.AssemblyInfo.cs
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.csproj.CoreCompileInputs.cache
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/webscrapper
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/webscrapper.deps.json
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/webscrapper.runtimeconfig.json
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/webscrapper.dll
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/webscrapper.pdb
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.dll
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/refint/webscrapper.dll
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.pdb
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.genruntimeconfig.cache
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/ref/webscrapper.dll
+/home/pedro/PI/dev_sisqual/webscrapper/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/pedro/PI/dev_sisqual/webscrapper/obj/Debug/net6.0/webscrapper.csproj.CopyComplete
