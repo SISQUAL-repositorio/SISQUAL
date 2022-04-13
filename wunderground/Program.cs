@@ -67,7 +67,7 @@ public class Program {
             log("Error: Entering the given location" + location + " in search bar.");
         }
 
-        driver.Navigate().GoToUrl("https://www.wunderground.com/weather/pt/porto"); // TO DO
+        //driver.Navigate().GoToUrl("https://www.wunderground.com/weather/pt/porto"); // TO DO
 
         if (click_in_history_button(driver) == false) {
             log("Error: Unable to click in history button.");
@@ -101,6 +101,8 @@ public class Program {
         if (wind_speed != -9999) meteorology.set_wind_speed(wind_speed);
         if (pressure != -9999) meteorology.set_pressure(pressure);
         if (precipitation != -9999) meteorology.set_precipitation(precipitation);
+
+        //closeDriver(driver);
 
         return meteorology;
     }
@@ -237,8 +239,20 @@ public class Program {
             if (search_bar.Displayed && search_bar.Enabled) {
                 search_bar.Click();
                 search_bar.SendKeys(location_to_search);
+                search_bar.Click();
                 //ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all hide
-                Console.WriteLine(driver.PageSource);
+                ////*[@id="wuForm"]/search-autocomplete/ul/li[2]
+                Thread.Sleep(2000);
+                driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul/li[2]")).Click();
+                //List<IWebElement> suggestions = driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul")).FindElements(By.XPath(".//li")).ToList();
+                /*bool accept_next_suggestion = false;
+                foreach(IWebElement suggestion in suggestions) {
+                    Console.WriteLine(suggestion.Text);
+                    if (suggestion.Text == "city") {
+                        accept_next_suggestion = true;
+                    }
+                    if(accept_next_suggestion) suggestion.Click();
+                }*/
             }
             else {
                 return false;
