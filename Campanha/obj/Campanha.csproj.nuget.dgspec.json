@@ -42,6 +42,14 @@
               "target": "Package",
               "version": "[1.11.42, )"
             },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.8, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[107.3.0, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.1.0, )"
