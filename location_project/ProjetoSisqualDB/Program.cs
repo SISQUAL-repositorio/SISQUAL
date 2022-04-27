@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 
 namespace ProjetoSisqualDB
 {
@@ -15,6 +16,7 @@ namespace ProjetoSisqualDB
         {
             webLinkRetrieve();
             Console.ReadLine();
+            
         }
         
         private static void webLinkRetrieve()
@@ -22,20 +24,23 @@ namespace ProjetoSisqualDB
 
             //User input best method (directly search from the url section)
             Console.Write("What are you looking for? -> ");
-            string inputPesquisa = Console.ReadLine();
-            inputPesquisa.Trim().Replace(" ", "+");
+            string inputSearch = Console.ReadLine();
+            inputSearch.Trim().Replace(" ", "+");
+
+
+            
 
             //Create option for headless mode
             ChromeOptions option = new ChromeOptions();
-            option.AddArgument("headless");
-
+            option.AddArgument("incognito");
+            
 
             //Initialize Driver (on Headlessmode add "option" before created on ChromeDriver)
-            IWebDriver driver = new ChromeDriver(@"C:\Users\Pedro.Costa\Desktop\ChromeDriver");
-            driver.Navigate().GoToUrl($"https://google.com/search?q={inputPesquisa}");
+            IWebDriver driver = new ChromeDriver(@"C:\Users\Pedro.Costa\Desktop\ChromeDriver",option);
+            driver.Navigate().GoToUrl($"https://google.com/search?q={inputSearch}");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Window.Maximize();
-            Console.WriteLine("Searching for "+ inputPesquisa + "...");
+            Console.WriteLine("Searching for "+ inputSearch + "...");
 
             //Google terms Accept
             IWebElement termsAgree = driver.FindElement(By.XPath("//*[@id='L2AGLb']"));
@@ -46,7 +51,7 @@ namespace ProjetoSisqualDB
             //CLICK ON 1ST RESULT THATS NOT AN ADD
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
             IWebElement results = driver.FindElement(By.ClassName("iUh30"));
-            Console.WriteLine("Verify results (adds excluded)...");
+            Console.WriteLine("Verifying results (adds excluded)...");
             results.Click();
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
@@ -61,14 +66,15 @@ namespace ProjetoSisqualDB
 
             Console.WriteLine("Searching for cookies policy...");
             //This method consists in looking for Cookies Policy and accept them
-            List<IWebElement> possible_buttons = driver.FindElements(By.XPath("//button[contains(text(),'Aceitar')]")).ToList();
-            List<IWebElement> possible_buttons_english = driver.FindElements(By.XPath("//button[contains(text(),'Agree')]")).ToList();
-            List<IWebElement> possible_buttons_espanhol = driver.FindElements(By.XPath("//button[contains(text(),'Aceptar')]")).ToList();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(8);
+            List<IWebElement> possibleButtons = driver.FindElements(By.XPath("//button[contains(text(),'Aceitar')]")).ToList();
+            List<IWebElement> possibleButtonsEnglish = driver.FindElements(By.XPath("//button[contains(text(),'Agree')]")).ToList();
+            List<IWebElement> possibleButtonsSpanish = driver.FindElements(By.XPath("//button[contains(text(),'Aceptar')]")).ToList();
 
-            possible_buttons_english.ForEach(item => possible_buttons.Add(item));
-            possible_buttons_espanhol.ForEach(item => possible_buttons.Add(item));
+            possibleButtonsEnglish.ForEach(item => possibleButtons.Add(item));
+            possibleButtonsSpanish.ForEach(item => possibleButtons.Add(item));
 
-            foreach (IWebElement button in possible_buttons)
+            foreach (IWebElement button in possibleButtons)
             {
                 try
                 {
@@ -93,9 +99,12 @@ namespace ProjetoSisqualDB
         private static void getData(string link, IWebDriver driver)
         {
             Console.WriteLine("Retrieving source of the current website...");
-            List<IWebElement> possible_BtnMap = driver.FindElements(By.CssSelector("a[href*='/lojas']")).ToList();
+            List<IWebElement> possibleBtnMap = driver.FindElements(By.CssSelector("a[href*='loja']")).ToList();
 
-            foreach (IWebElement button in possible_BtnMap)
+            // page URL
+            string pageURL = driver.Url;
+
+            foreach (IWebElement button in possibleBtnMap)
             {
                 try
                 {
@@ -107,13 +116,115 @@ namespace ProjetoSisqualDB
                     continue;
                 }
             }
-           
 
-            //Source HTML of the page and page URL
-            string pageURL = driver.Url;
+            // page URL after clicking on stores
+            string pageURLafter = driver.Url;
+
+            if (pageURL == pageURLafter)
+            {
+
+
+            }
+
+
+            //Source HTML of the page 
             string source = driver.PageSource;
-            getLocationData(source,pageURL);
 
+
+            //Next function
+            getLocationDataVersion2(source,pageURLafter);
+            //getLocationData(source, pageURL);
+
+            //Driver close
+            Console.WriteLine("Closing driver...");
+           // driver.Close();
+        }
+        private static void getLocationDataVersion2(string source, string pageURL)
+        {
+            Console.WriteLine("Searching for locations in the current website...");
+            
+            var srcStr = source.ToString();
+
+            //Regex -> sequence of 4 numbers (0-9) followed by "-" and another 3 numbers (0-9)
+            var regex = new Regex("[0-9]{4}-[0-9]{3}");  //REGEX PT VER PARA OUTROS PAISES
+
+            //Results count
+            var resultsCount = 0;
+
+            List<String> zipcodes = new List<String> { };
+
+            //add zipcodes found using regex excluding repeated values
+            foreach (Match match in regex.Matches(srcStr))
+            {
+                if (!zipcodes.Contains(match.Value))
+                {
+                    zipcodes.Add(match.Value);
+                    resultsCount += 1;
+                }
+            }
+     
+            //Uso assim para cada zipcode na lista o qe fica mais lento. P voltar ao normal fazer getStoreData(zipcodes) e alterar a funçao 
+            //abaixo (substituir o code por codes)
+
+            
+            foreach (var zipcode in zipcodes)
+            {
+                getStoreData(zipcode);  
+            }
+
+            Console.WriteLine(resultsCount + " zipcodes were found. (Some might be repeated or invalid)");
+            Console.WriteLine("Valid and unrepeated results were shown above!");
+            Console.WriteLine("Page link: " + pageURL);
+   
+        }
+
+
+        private static void getStoreData(string zipcode)
+        {
+            
+            var client = new HttpClient();
+            string key = "de744d20-bb62-11ec-bc34-ab9b8c173a58";
+
+            //var codes = String.Join(",", zipcodes.ToArray());
+            var code = zipcode;
+
+                var content = client.GetStringAsync($"https://app.zipcodebase.com/api/v1/search?apikey={key}&codes={code}").Result;
+
+                var json = JObject.Parse(content);
+
+                if (json["query"].Count() == 0)
+                {
+                    return;
+                }
+                else
+                {
+                //var output = json["results"].ToString();
+                //Console.WriteLine(output);
+                    try
+                    {
+                        var city = json["results"][code][0]["city"].ToString();
+                        var latitude = json["results"][code][0]["latitude"].ToString();
+                        var longitude = json["results"][code][0]["longitude"].ToString();
+                        var country = json["results"][code][0]["country_code"].ToString();
+                        var postalCode = json["results"][code][0]["postal_code"].ToString();
+                        var state = json["results"][code][0]["state"].ToString();
+                        var province = json["results"][code][0]["province"].ToString();
+                        Console.WriteLine("Store " + city + ":");
+                        Console.WriteLine("Country: " + country);
+                        Console.WriteLine("Latitude: " + latitude);
+                        Console.WriteLine("Longitude: " + longitude);
+                        Console.WriteLine("Postal Code: " + postalCode);
+                        Console.WriteLine("State: " + state);
+                        Console.WriteLine("Province: " + province);
+                        Console.WriteLine("---------------------");
+                }
+                    catch (System.ArgumentException ae)
+                    {
+                    
+                    }
+    
+            }
+                
         }
 
         private static void getLocationData(string source, string pageURL)
@@ -128,7 +239,7 @@ namespace ProjetoSisqualDB
             //Find store divs
             List<HtmlNode> LocationsHtml = new List<HtmlNode>();
 
-
+            
             foreach (var keyword in possible_classes_Keywords)
             {
                 LocationsHtml = htmlDocument.DocumentNode.Descendants("div")
@@ -185,13 +296,13 @@ namespace ProjetoSisqualDB
                 string longitude = "";
                 string latitude = "";
                 string adminArea = "";
-                getGeoLocation(store.InnerText, ref longitude, ref latitude , ref adminArea);
+                getGeoLocation(storeData[1].InnerText, ref longitude, ref latitude , ref adminArea);
                 Console.WriteLine("Longitude: " + longitude + "\nLatitude: " + latitude + "\nAdministrative area: " + adminArea);
                 Console.WriteLine();
               
             }
             Console.WriteLine("Page link: "+pageURL);
-          
+            
             //Console.WriteLine("Latitude_" + teste);
             
 
@@ -213,8 +324,7 @@ namespace ProjetoSisqualDB
 
 
         }
-        
-
+       
         private static void getGeoLocation(string store, ref string latitude, ref string longitude, ref string adminArea)
         {
             /*string address = "123 something st, somewhere";
@@ -233,28 +343,28 @@ namespace ProjetoSisqualDB
 
             var client = new HttpClient();
             string key = "26d930d54271f6ca02183adb2b5a2133";
-            
+
+         
             store.Trim().Replace(" ", "%20");
-            var paramenters = $"?access_key={key}&query={store}&country=PT&fields&limit=1";
 
-            var content = client.GetStringAsync($"http://api.positionstack.com/v1/forward{paramenters}").Result;
-           
-
-            var json = JObject.Parse(content);
-
-            if (json["data"].Count() == 0)
+            if (store != "")
             {
-                return;
+                var paramenters = $"?access_key={key}&query={store}&country=PT&fields&limit=1";
+                var content = client.GetStringAsync($"http://api.positionstack.com/v1/forward{paramenters}").Result;
+
+                var json = JObject.Parse(content);
+
+                if (json["data"].Count() == 0)
+                {
+                    return;
+                }
+
+                latitude = json["data"][0]["latitude"].ToString();
+                longitude = json["data"][0]["longitude"].ToString();
+                adminArea = json["data"][0]["administrative_area"].ToString();
             }
-           
-            latitude = json["data"][0]["latitude"].ToString();
-            longitude = json["data"][0]["longitude"].ToString();
-            adminArea= json["data"][0]["administrative_area"].ToString(); 
-
+          
         }
-
-
-
 
     }
 }
