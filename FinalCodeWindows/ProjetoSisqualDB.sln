@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSisqualDB", "ProjetoSisqualDB\ProjetoSisqualDB.csproj", "{51977636-3E79-4BBB-B2AC-72B737852675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleChromeDriver", "..\..\..\..\..\..\..\..\source\repos\GoogleChromeDriver\GoogleChromeDriver.csproj", "{F4023B8F-04BC-435C-8B0D-166A94A0E105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyGetStoreLink", "CompanyGetStoreLink\CompanyGetStoreLink.csproj", "{A8ADBF71-A115-499C-84D5-C3B05471CE46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostalCodeScraping", "PostalCodeScraping\PostalCodeScraping.csproj", "{A7AFD573-6327-4131-B7DF-C1A00AA15CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetStoreInformation", "GetStoreInformation\GetStoreInformation.csproj", "{5C1AB885-D2B4-4CCA-8E77-9563FF6ADEA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyStoresLocationFinder", "CompanyStoresLocationFinder\CompanyStoresLocationFinder.csproj", "{94ACCF23-7B9C-4EDC-9FD5-D808C9701C5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51977636-3E79-4BBB-B2AC-72B737852675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51977636-3E79-4BBB-B2AC-72B737852675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51977636-3E79-4BBB-B2AC-72B737852675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51977636-3E79-4BBB-B2AC-72B737852675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4023B8F-04BC-435C-8B0D-166A94A0E105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4023B8F-04BC-435C-8B0D-166A94A0E105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4023B8F-04BC-435C-8B0D-166A94A0E105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4023B8F-04BC-435C-8B0D-166A94A0E105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8ADBF71-A115-499C-84D5-C3B05471CE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8ADBF71-A115-499C-84D5-C3B05471CE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8ADBF71-A115-499C-84D5-C3B05471CE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8ADBF71-A115-499C-84D5-C3B05471CE46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AFD573-6327-4131-B7DF-C1A00AA15CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7AFD573-6327-4131-B7DF-C1A00AA15CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7AFD573-6327-4131-B7DF-C1A00AA15CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7AFD573-6327-4131-B7DF-C1A00AA15CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1AB885-D2B4-4CCA-8E77-9563FF6ADEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1AB885-D2B4-4CCA-8E77-9563FF6ADEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1AB885-D2B4-4CCA-8E77-9563FF6ADEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1AB885-D2B4-4CCA-8E77-9563FF6ADEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94ACCF23-7B9C-4EDC-9FD5-D808C9701C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94ACCF23-7B9C-4EDC-9FD5-D808C9701C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94ACCF23-7B9C-4EDC-9FD5-D808C9701C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94ACCF23-7B9C-4EDC-9FD5-D808C9701C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E110BD4C-3033-4EA7-930E-C939EA479193}
+	EndGlobalSection
+EndGlobal

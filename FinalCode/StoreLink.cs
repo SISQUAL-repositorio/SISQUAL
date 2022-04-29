@@ -22,7 +22,7 @@ namespace app
         };
         private static Dictionary<string, Dictionary<int, string>> keyWordsWeight = new Dictionary<string, Dictionary<int, string>>() {
             {"pt", keyWordsWeightPT},
-            {"es", keyWordsWeightEN},
+            {"en", keyWordsWeightEN},
         };
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,7 @@ namespace app
         //////////////////////////////////////////////////////////////////////////////////
         private static Dictionary<string, Regex> postalCodesTemplates = new Dictionary<string, Regex>() {
             {"pt", new Regex("[1-9][0-9]{3}-[0-9]{3}")},
-            {"es", new Regex("[0-9]{4}-[0-9]{3}")},
+            {"en", new Regex("[0-9]{4}-[0-9]{3}")},
         };
         static public void Main(string[] args)
         {

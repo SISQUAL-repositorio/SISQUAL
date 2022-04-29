@@ -1,0 +1,12 @@
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\obj\Debug\PostalCodeScraping.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\obj\Debug\PostalCodeScraping.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\PostalCodeScraping.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\PostalCodeScraping.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\CompanyGetStoreLink.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\GoogleChromeDriver.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\WebDriver.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\CompanyGetStoreLink.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\bin\Debug\GoogleChromeDriver.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\obj\Debug\PostalCodeScraping.csproj.CopyComplete
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\obj\Debug\PostalCodeScraping.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\PostalCodeScraping\obj\Debug\PostalCodeScraping.pdb

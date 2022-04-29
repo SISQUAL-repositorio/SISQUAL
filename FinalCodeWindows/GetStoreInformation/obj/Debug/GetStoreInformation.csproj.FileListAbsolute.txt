@@ -1,0 +1,11 @@
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\GetStoreInformation.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\GetStoreInformation.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\CompanyGetStoreLink.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\CompanyGetStoreLink.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\obj\Debug\GetStoreInformation.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\obj\Debug\GetStoreInformation.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\obj\Debug\GetStoreInformation.csproj.CopyComplete
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\obj\Debug\GetStoreInformation.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\GetStoreInformation\obj\Debug\GetStoreInformation.pdb

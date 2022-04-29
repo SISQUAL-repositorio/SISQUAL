@@ -3,8 +3,8 @@ public class Company {
     private string companyName = "";
     private string companyWebPageHtml = "";
     private string storesInformationLink = "";
-
     private List<Store> stores = new List<Store> ();
+
     public Company(string companyName) {
         this.companyName = companyName;
     }

@@ -1,0 +1,8 @@
+C:\Users\Pedro\source\repos\GoogleChromeDriver\bin\Debug\GoogleChromeDriver.dll
+C:\Users\Pedro\source\repos\GoogleChromeDriver\bin\Debug\GoogleChromeDriver.pdb
+C:\Users\Pedro\source\repos\GoogleChromeDriver\bin\Debug\WebDriver.dll
+C:\Users\Pedro\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.csproj.AssemblyReference.cache
+C:\Users\Pedro\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.csproj.CopyComplete
+C:\Users\Pedro\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.dll
+C:\Users\Pedro\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.pdb
