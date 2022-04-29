@@ -30,5 +30,11 @@ namespace CompanyGetStoreLink
         { //just for debugging, delete when dll
             Console.WriteLine("Latitude: " + latitude + "\n" + "Longitude: " + longitude);
         }
+
+        public string toString()
+        { 
+            string output = "Latitude: " + latitude + "\n" + "Longitude: " + longitude + "\n";
+            return output;
+        }
     }
 }

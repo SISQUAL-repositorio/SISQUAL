@@ -50,6 +50,23 @@ namespace CompanyGetStoreLink
             Console.WriteLine("Company Name: " + this.companyName);
             Console.WriteLine("Company Web Page: " + this.companyWebPageHtml);
             Console.WriteLine("Stores Information Link: " + this.storesInformationLink);
+            foreach(Store store in stores)
+            {
+                store.showInfo();
+            }
+        }
+
+        public string toString()
+        {
+            string output = "";
+            output += "Company Name: " + this.companyName + "\n";
+            output += "Company Web Page: " + this.companyWebPageHtml + "\n";
+            output += "Stores Information Link: " + this.storesInformationLink + "\n";
+            foreach (Store store in stores)
+            {
+                output += store.toString() + "\n";
+            }
+            return output;
         }
     }
 }

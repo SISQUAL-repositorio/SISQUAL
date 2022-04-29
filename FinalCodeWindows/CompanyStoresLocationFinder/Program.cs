@@ -21,24 +21,8 @@ namespace CompanyStoresLocationFinder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-
-            List<string> companieNames = new List<string>();
-            List<Company> companies = CompanyGetStoreLinkClass.getCompaniesInformation(companieNames);
-
-            List<Company> companiesFilledWithPostalCode = new List<Company>();
-            foreach (Company company in companies)
-            {
-                Company companyFilledWithPostalCode = PostalCodeScrapingClass.getStoresPostalCodes(company);
-                companiesFilledWithPostalCode.Add(companyFilledWithPostalCode);
-            }
-
-            List<Company> companiesFilledWithAllInformation = new List<Company>();
-            foreach (Company company in companiesFilledWithPostalCode)
-            {
-                Company companyFilledWithAllInformation = GetStoreInformationClass.getStoresLocation(company);
-                companiesFilledWithAllInformation.Add(companyFilledWithAllInformation);
-            }
+            Form1 form = new Form1();
+            Application.Run(form);
         }
     }
 }

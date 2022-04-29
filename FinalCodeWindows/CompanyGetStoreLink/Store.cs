@@ -56,5 +56,18 @@ namespace CompanyGetStoreLink
             Console.WriteLine("Province: " + province);
             Console.WriteLine("---------------------");
         }
+
+        public string toString()
+        { //just for debugging, delete when dll
+            string output = "";
+            output += "Postal Code: " + this.postalCode + "\n";
+            output += location.toString() + "\n";
+            output += "city: " + city + "\n";
+            output += "Country: " + country + "\n";
+            output += "State: " + state + "\n";
+            output += "Province: " + province + "\n";
+            output += "---------------------" + "\n";
+            return output;
+        }
     }
 }

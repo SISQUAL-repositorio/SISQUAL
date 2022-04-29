@@ -21,27 +21,25 @@ namespace CompanyGetStoreLink
             {"pt", keyWordsWeightPT},
             {"en", keyWordsWeightEN},
         };
-        public static List<Company> getCompaniesInformation(List<string> companiesName)
+        public static List<Company> getCompaniesInformation(IWebDriver driver, List<string> companiesName)
         {
             List<Company> companiesInformations = new List<Company>();
 
             foreach (string companyName in companiesName)
             {
                 Company companyToAdd = new Company(companyName);
-                getCompanyInformation(ref companyToAdd);
+                companyToAdd = getCompanyInformation(driver, companyToAdd);
                 companiesInformations.Add(companyToAdd);
             }
 
             return companiesInformations;
         }
-        public static void getCompanyInformation(ref Company company)
+        public static Company getCompanyInformation(IWebDriver driver, Company company)
         {
-            IWebDriver driver = Driver.initializeDriver("C:\\Users\\Pedro\\MEOCloud", false);
-
             string companyName = company.getCompanyName();
             if (companyName == "")
             {
-                return;
+                return company;
             }
 
             Driver.doGoogleSearch(driver, companyName);
@@ -58,13 +56,11 @@ namespace CompanyGetStoreLink
             if (storeLink == null)
             {
                 Driver.closeDriver(driver);
-                return;
+                return company;
             }
 
             company.setStoresInformationLink(storeLink);
-            
-            Driver.closeDriver(driver);
-            return;
+            return company;
         }
 
         public static Dictionary<IWebElement, int> getStoresLinks(IWebDriver driver, Dictionary<int, string> keyWords)

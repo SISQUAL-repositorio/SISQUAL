@@ -20,7 +20,7 @@ namespace PostalCodeScraping
 
             IWebDriver driver = Driver.initializeDriver("C:\\Users\\Pedro\\MEOCloud", false);
 
-            CompanyGetStoreLinkClass.getCompanyInformation(ref company);
+            CompanyGetStoreLinkClass.getCompanyInformation(driver, company);
 
             company.showInfo();
 
