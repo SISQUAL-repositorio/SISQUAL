@@ -1,0 +1,17 @@
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.csproj.AssemblyReference.cache
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.AssemblyInfoInputs.cache
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.AssemblyInfo.cs
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.csproj.CoreCompileInputs.cache
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\MeteoStat.exe
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\MeteoStat.deps.json
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\MeteoStat.runtimeconfig.json
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\MeteoStat.dll
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\MeteoStat.pdb
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.dll
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\refint\MeteoStat.dll
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.pdb
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.genruntimeconfig.cache
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\ref\MeteoStat.dll
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\leandro.barroso\source\repos\MeteoStat\MeteoStat\obj\Debug\net6.0\MeteoStat.csproj.CopyComplete
