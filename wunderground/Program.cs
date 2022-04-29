@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace app
 {
+    /// fails because of precipitaion invalid data
 public class Program {
     static public void Main(string[] args)
     {    
@@ -14,8 +15,10 @@ public class Program {
         List<Location> locations = new List<Location> ();
         Location location1 = new Location("Porto", "Porto", "Portugal");
         Location location2 = new Location("Póvoa de Varzim", "Porto", "Portugal");
+        Location location3 = new Location("Aveiro", "Aveiro", "Portugal");
         locations.Add(location1);
         locations.Add(location2);
+        locations.Add(location3);
         //
         
         get_data(locations, date);
@@ -31,7 +34,7 @@ public class Program {
         List<Meteorology> metereologies = new List<Meteorology> ();
         metereologies = get_meteorology_data(driver, locations, date);
 
-        //closeDriver(driver);
+        closeDriver(driver);
 
         return metereologies;
     }
@@ -67,7 +70,7 @@ public class Program {
             log("Error: Entering the given location" + location + " in search bar.");
         }
 
-        //driver.Navigate().GoToUrl("https://www.wunderground.com/weather/pt/porto"); // TO DO
+        //driver.Navigate().GoToUrl("https://www.wunderground.com/weather/pt/porto");
 
         if (click_in_history_button(driver) == false) {
             log("Error: Unable to click in history button.");
@@ -118,12 +121,12 @@ public class Program {
                     history_button.Click();
                     return true;
                 }
-                else Thread.Sleep(1000);
+                else Thread.Sleep(2000);
             } catch (StaleElementReferenceException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             catch (NoSuchElementException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             num_tries++;
         }
@@ -142,11 +145,11 @@ public class Program {
                     monthly_button.Click();
                     return true;
                 }
-                else Thread.Sleep(1000);
+                else Thread.Sleep(2000);
             } catch (StaleElementReferenceException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             } catch (NoSuchElementException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             num_tries++;
         }
@@ -168,13 +171,13 @@ public class Program {
                 submit_date.Click();
                 return true;
             } catch (StaleElementReferenceException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             catch (ElementNotVisibleException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             catch (NoSuchElementException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             num_tries++;
         }
@@ -193,7 +196,7 @@ public class Program {
                 days_column = table_columns.ElementAt(0).FindElements(By.XPath(".//table/tr")).ToList();
                 break;
             } catch (NoSuchElementException) {
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
             num_tries++;
         }
@@ -240,12 +243,12 @@ public class Program {
                 search_bar.Click();
                 search_bar.SendKeys(location_to_search);
                 search_bar.Click();
-                //ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all hide
-                ////*[@id="wuForm"]/search-autocomplete/ul/li[2]
                 Thread.Sleep(2000);
-                driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul/li[2]")).Click();
-                //List<IWebElement> suggestions = driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul")).FindElements(By.XPath(".//li")).ToList();
-                /*bool accept_next_suggestion = false;
+
+                driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul/li[2]")).Click(); //Needs to be reviewed to see if it always works or not
+                                
+                /*List<IWebElement> suggestions = driver.FindElement(By.XPath("//*[@id='wuForm']/search-autocomplete/ul")).FindElements(By.XPath(".//li")).ToList();
+                bool accept_next_suggestion = false;
                 foreach(IWebElement suggestion in suggestions) {
                     Console.WriteLine(suggestion.Text);
                     if (suggestion.Text == "city") {

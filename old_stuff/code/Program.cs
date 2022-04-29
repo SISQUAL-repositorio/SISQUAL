@@ -200,7 +200,7 @@ class Program {
     public static List<String> getKeyWords(String filename) 
     {
         return JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(filename));
-    }    
+    }
 
     public static void getAllStoresInformation(IWebDriver driver, String filename) 
     {

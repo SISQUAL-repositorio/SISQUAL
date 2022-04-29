@@ -217,7 +217,7 @@ namespace ProjetoSisqualDB
                         Console.WriteLine("State: " + state);
                         Console.WriteLine("Province: " + province);
                         Console.WriteLine("---------------------");
-                }
+                    }
                     catch (System.ArgumentException ae)
                     {
                     
