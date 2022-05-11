@@ -1,0 +1,17 @@
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.csproj.AssemblyReference.cache
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.AssemblyInfoInputs.cache
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.AssemblyInfo.cs
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.csproj.CoreCompileInputs.cache
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\StationMeteo.exe
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\StationMeteo.deps.json
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\StationMeteo.runtimeconfig.json
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\StationMeteo.dll
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\StationMeteo.pdb
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.csproj.CopyComplete
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.dll
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\refint\StationMeteo.dll
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.pdb
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\StationMeteo.genruntimeconfig.cache
+C:\Users\leandro.barroso\source\repos\StationMeteo\StationMeteo\obj\Debug\net6.0\ref\StationMeteo.dll
