@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Log4net;
-using Log4net.Appender;
-using Log4net.Config;
+using log4net;
+using log4net.Appender;
+using log4net.Config;
 
 namespace Log4net
 {
@@ -64,9 +64,9 @@ namespace Log4net
         {
             try
             {
-                ...
+                
 			
-			string errorMessage = ...
+			string errorMessage = "error";
 
             this.Logger.Info(string.Format("Info message for log [{0}]", errorMessage));
             }

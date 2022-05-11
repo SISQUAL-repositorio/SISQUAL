@@ -137,7 +137,6 @@ namespace CompanyGetStoreLink
                     break;
                 }
                 bestsStoreLinksBasedOnText.Add(storeLink.Key);
-
             }
 
             if (bestsStoreLinksBasedOnText.Count() == 1) return bestsStoreLinksBasedOnText.ElementAt(0).GetAttribute("href");

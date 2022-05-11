@@ -12,6 +12,7 @@ using CompanyGetStoreLink;
 using PostalCodeScraping;
 using GetStoreInformation;
 
+
 namespace CompanyStoresLocationFinder
 {
     public partial class Form1 : Form
@@ -49,17 +50,14 @@ namespace CompanyStoresLocationFinder
         private void button1_Click(object sender, EventArgs e)
         {
             companyNames = companyNamesList.Text.Split(';').ToList();
-            MessageBox.Show(companyNames.ToString());
             companyNamesList.Text = "";
 
             if (companyNames == null || companyNames.Count() == 0)
             {
                 return;
             }
-            this.debug("got here");
+            this.debug("Creation of companies list");
             this.debug("COUNT: " + companyNames.Count());
-            this.debug("FIRST: " + companyNames.ElementAt(0));
-
             
             List<Company> companies = new List<Company>();
             foreach(string companyName in companyNames)
@@ -67,23 +65,21 @@ namespace CompanyStoresLocationFinder
                 companies.Add(new Company(companyName));
             }
 
-            this.debug("got here2");
+            this.debug("Getting stores postal code");
             List<Company> companiesFilledWithPostalCode = new List<Company>();
             foreach (Company company in companies)
             {
                 Company companyFilledWithPostalCode = PostalCodeScrapingClass.getStoresPostalCodes(company);
                 companiesFilledWithPostalCode.Add(companyFilledWithPostalCode);
             }
-            this.debug("got here3");
 
+            this.debug("Getting stores location from the postal code, using the zicodeAPI");
             List<Company> companiesFilledWithAllInformation = new List<Company>();
-            this.debug("got here4");
             foreach (Company company in companiesFilledWithPostalCode)
             {
                 Company companyFilledWithAllInformation = GetStoreInformationClass.getStoresLocation(company);
                 companiesFilledWithAllInformation.Add(companyFilledWithAllInformation);
             }
-            this.debug("got here5");
 
             foreach (Company company in companiesFilledWithAllInformation)
             {
