@@ -1,0 +1,17 @@
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Campanhas.exe
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Campanhas.deps.json
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Campanhas.runtimeconfig.json
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Campanhas.dll
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Campanhas.pdb
+C:\Users\70\Desktop\Campanhas\Campanhas\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.csproj.AssemblyReference.cache
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.AssemblyInfoInputs.cache
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.AssemblyInfo.cs
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.csproj.CoreCompileInputs.cache
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.csproj.CopyComplete
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.dll
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\refint\Campanhas.dll
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.pdb
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\Campanhas.genruntimeconfig.cache
+C:\Users\70\Desktop\Campanhas\Campanhas\obj\Debug\net6.0\ref\Campanhas.dll
