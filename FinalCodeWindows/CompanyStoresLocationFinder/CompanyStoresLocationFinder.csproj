@@ -42,8 +42,8 @@
     <Reference Include="GoogleChromeDriver">
       <HintPath>..\..\..\..\..\..\..\..\..\source\repos\GoogleChromeDriver\obj\Debug\GoogleChromeDriver.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\Log4net\log4net.dll</HintPath>
+    <Reference Include="Metereologic_NearbyStation">
+      <HintPath>..\Metereologic_NearbyStation\obj\Debug\Metereologic_NearbyStation.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>

@@ -7,63 +7,114 @@ using GoogleChromeDriver;
 
 namespace CompanyGetStoreLink
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CompanyGetStoreLinkClass
     {
-        private static Dictionary<int, string> keyWordsWeightPT = new Dictionary<int, string>() {
-            {1, "loj"},
-            {2, "contact"},
-        };
-        private static Dictionary<int, string> keyWordsWeightEN = new Dictionary<int, string>() {
-            {1, "shop"},
-            {2, "contact"},
-        };
-        private static Dictionary<string, Dictionary<int, string>> keyWordsWeight = new Dictionary<string, Dictionary<int, string>>() {
-            {"pt", keyWordsWeightPT},
-            {"en", keyWordsWeightEN},
-        };
-        public static List<Company> getCompaniesInformation(IWebDriver driver, List<string> companiesName)
+        #region Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="companyName"></param>
+        /// <param name="keyWords"></param>
+        /// <param name="companyWebLink"></param>
+        /// <param name="companyStoresWebLink"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
+        public static bool GetCompanyWebLinks(IWebDriver driver, string companyName, Dictionary<int, string> keyWords, out string companyWebLink, out string companyStoresWebLink, out string errorMessage)
         {
-            List<Company> companiesInformations = new List<Company>();
+            errorMessage = string.Empty;
+            companyWebLink = string.Empty;
+            companyStoresWebLink = string.Empty;
 
-            foreach (string companyName in companiesName)
+            if (string.IsNullOrEmpty(companyName) || driver == null)
             {
-                Company companyToAdd = new Company(companyName);
-                companyToAdd = getCompanyInformation(driver, companyToAdd);
-                companiesInformations.Add(companyToAdd);
+                return false;
             }
 
-            return companiesInformations;
-        }
-        public static Company getCompanyInformation(IWebDriver driver, Company company)
-        {
-            string companyName = company.getCompanyName();
-            if (companyName == "")
+            if(!GetCompanyWebLink(driver, companyName, out companyWebLink, out errorMessage))
             {
-                return company;
+                return false;
             }
 
-            Driver.doGoogleSearch(driver, companyName);
-
-            string companyWebPageHtml = Driver.getAllGoogleSearchLinks(driver).ElementAt(0);
-            company.setCompanyWebPageHtml(companyWebPageHtml);
-            driver.Navigate().GoToUrl(companyWebPageHtml);
-
-            Dictionary<int, string> keyWords = getKeyWords();
-
-            Dictionary<IWebElement, int> storeLinks = getStoresLinks(driver, keyWords);
-
-            string storeLink = getBestStoreLink(storeLinks);
-            if (storeLink == null)
+            if (!GetCompanyStoresWeblink(driver, companyWebLink, keyWords, out companyStoresWebLink, out errorMessage))
             {
-                Driver.closeDriver(driver);
-                return company;
+                return false;
             }
 
-            company.setStoresInformationLink(storeLink);
-            return company;
+            return true;
         }
 
-        public static Dictionary<IWebElement, int> getStoresLinks(IWebDriver driver, Dictionary<int, string> keyWords)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="companyName"></param>
+        /// <param name="companyWebLink"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
+        private static bool GetCompanyWebLink(IWebDriver driver, string companyName, out string companyWebLink, out string errorMessage)
+        {
+            companyWebLink = string.Empty;
+            List<string> googleResultsList;
+
+            if (!Driver.GetAllGoogleSearchLinks(driver, companyName, out googleResultsList, out errorMessage))
+            {
+                return false;
+            }
+
+            companyWebLink = googleResultsList.ElementAt(0); //TO DO: IMPROVE
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="companyWebLink"></param>
+        /// <param name="keyWords"></param>
+        /// <param name="companyStoresWebLink"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
+        private static bool GetCompanyStoresWeblink(IWebDriver driver, string companyWebLink, Dictionary<int, string> keyWords, out string companyStoresWebLink, out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            companyStoresWebLink= string.Empty;
+
+            try
+            {
+                driver.Navigate().GoToUrl(companyWebLink);
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return false;
+            }
+            
+            Dictionary<IWebElement, int> allPossibleCompanyStoresLinks = GetAllCompanyStoresLinks(driver, keyWords);
+            List<string> bestCompanyStoresLinks = GetBestCompanyStoresLink(allPossibleCompanyStoresLinks, keyWords);
+
+            if (bestCompanyStoresLinks.Count == 0)
+            {
+                Driver.CloseDriver(driver);
+                errorMessage = "Unable to find company stores information link.";
+                return false;
+            }
+
+            companyStoresWebLink = bestCompanyStoresLinks.ElementAt(0); //TO DO: IMPROVE
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="keyWords"></param>
+        /// <returns></returns>
+        private static Dictionary<IWebElement, int> GetAllCompanyStoresLinks(IWebDriver driver, Dictionary<int, string> keyWords)
         {
             List<IWebElement> allLinks = driver.FindElements(By.TagName("a")).ToList();
 
@@ -81,14 +132,14 @@ namespace CompanyGetStoreLink
 
                     if (link.Displayed && link.Enabled)
                     {
-                        linkTextWeight = correctKeyWord(keyWords, link.Text);
+                        linkTextWeight = CorrectKeyWord(keyWords, link.Text);
                         if (linkTextWeight > 0)
                         {
                             usefulLinks.Add(link, linkTextWeight);
                         }
                     }
                 }
-                catch (OpenQA.Selenium.StaleElementReferenceException)
+                catch (StaleElementReferenceException)
                 {
                     continue;
                 }
@@ -97,14 +148,56 @@ namespace CompanyGetStoreLink
             return usefulLinks;
         }
 
-        public static Dictionary<int, string> getKeyWords()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="storeLinks"></param>
+        /// <param name="keyWords"></param>
+        /// <returns></returns>
+        private static List<string> GetBestCompanyStoresLink(Dictionary<IWebElement, int> storeLinks, Dictionary<int, string> keyWords)
         {
-            return keyWordsWeightPT; //TO DO: find a way of knowing the website language to use keyWordsWeight in order to get the right country
+            if (storeLinks.Count == 0) {
+                return null;
+            }
+
+            IOrderedEnumerable<KeyValuePair<IWebElement, int>> sortedStoreLinks = from entry in storeLinks orderby entry.Value ascending select entry;
+            int lowestValue = sortedStoreLinks.ElementAt(0).Value; //the lowest value is equivalent to the first entry in the sorted dictionary
+            List<string> bestsStoreLinks = new List<string>();
+            
+            foreach (KeyValuePair<IWebElement, int> storeLink in sortedStoreLinks)
+            {
+                if (storeLink.Value > lowestValue)
+                {
+                    break;
+                }
+                bestsStoreLinks.Add(storeLink.Key.GetAttribute("href"));
+            }
+
+            List<string> bestsStoreLinksBasedOnHref = new List<string>();
+            
+            foreach (string link in bestsStoreLinks)
+            {
+                if (CorrectKeyWord(keyWords, link) > 0)
+                {
+                    if (!bestsStoreLinksBasedOnHref.Contains(link))
+                    {
+                        bestsStoreLinksBasedOnHref.Add(link);
+                    }
+                }
+            }
+
+            return bestsStoreLinksBasedOnHref;
         }
 
-        public static int correctKeyWord(Dictionary<int, string> keyWords, String word)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="keyWords"></param>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        private static int CorrectKeyWord(Dictionary<int, string> keyWords, String word)
         {
-            if (String.IsNullOrEmpty(word))
+            if (string.IsNullOrEmpty(word))
             {
                 return -1;
             }
@@ -122,53 +215,6 @@ namespace CompanyGetStoreLink
             return -1;
         }
 
-        public static string getBestStoreLink(Dictionary<IWebElement, int> storeLinks)
-        {
-            if (storeLinks.Count == 0) return null;
-
-            IOrderedEnumerable<KeyValuePair<IWebElement, int>> sortedStoreLinks = from entry in storeLinks orderby entry.Value ascending select entry;
-            List<IWebElement> bestsStoreLinksBasedOnText = new List<IWebElement>();
-            int lowestValue = sortedStoreLinks.ElementAt(0).Value; //the lowest value is equivalent to the first entry in the sorted dictionary
-
-            foreach (KeyValuePair<IWebElement, int> storeLink in sortedStoreLinks)
-            {
-                if (storeLink.Value > lowestValue)
-                {
-                    break;
-                }
-                bestsStoreLinksBasedOnText.Add(storeLink.Key);
-            }
-
-            if (bestsStoreLinksBasedOnText.Count() == 1) return bestsStoreLinksBasedOnText.ElementAt(0).GetAttribute("href");
-
-            List<string> bestsStoreLinksBasedOnHref = new List<string>();
-            foreach (IWebElement link in bestsStoreLinksBasedOnText)
-            {
-                Dictionary<int, string> keyWords = getKeyWords();
-
-                if (correctKeyWord(keyWords, link.GetAttribute("href")) > 0)
-                {
-                    if (!bestsStoreLinksBasedOnHref.Contains(link.GetAttribute("href")))
-                    {
-                        bestsStoreLinksBasedOnHref.Add(link.GetAttribute("href"));
-                    }
-                }
-            }
-
-            if (bestsStoreLinksBasedOnHref.Count() == 1) return bestsStoreLinksBasedOnHref.ElementAt(0);
-
-            int lowestSizeLink = 9999;
-            string bestLink = "";
-            foreach (string link in bestsStoreLinksBasedOnHref)
-            {
-                if (link.Count() < lowestSizeLink)
-                {
-                    lowestSizeLink = link.Count();
-                    bestLink = link;
-                }
-            }
-
-            return (bestLink == "") ? null : bestLink;
-        }
+        #endregion
     }
 }

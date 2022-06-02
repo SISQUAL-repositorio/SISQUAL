@@ -1,10 +1,10 @@
-C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.csproj.AssemblyReference.cache
-C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.csproj.CoreCompileInputs.cache
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\bin\Debug\CompanyGetStoreLink.dll
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\bin\Debug\CompanyGetStoreLink.pdb
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\bin\Debug\GoogleChromeDriver.dll
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\bin\Debug\WebDriver.dll
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\bin\Debug\GoogleChromeDriver.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.csproj.CoreCompileInputs.cache
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.csproj.CopyComplete
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.dll
 C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\CompanyGetStoreLink\obj\Debug\CompanyGetStoreLink.pdb

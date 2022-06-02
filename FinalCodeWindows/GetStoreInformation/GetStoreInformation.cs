@@ -4,61 +4,109 @@ using System.Linq;
 using System.Net.Http;
 using CompanyGetStoreLink;
 using System.Globalization;
+using System;
+using System.Diagnostics;
 
 namespace GetStoreInformation
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GetStoreInformationClass
     {
-        public static Company getStoresLocation(Company company)
-        {
-            List<Store> stores = company.getStores();
-            List<Store> storesFilled = new List<Store>();
+        #region Methods
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stores"></param>
+        /// <param name="zipCodeApiToken"></param>
+        /// <param name="storesFilled"></param>
+        /// <returns></returns>
+        public static bool GetStoresLocation(List<Store> stores, string zipCodeApiToken, out List<Store> storesFilled)
+        {
+            storesFilled = new List<Store>();
+            
             foreach (Store store in stores)
             {
-                Store storeFilledToAdd = fillStoreInformation(store);
-                storesFilled.Add(storeFilledToAdd);
+                Store storeFilledToAdd;
+                if (FillStoreInformation(store.PostalCode, zipCodeApiToken, out storeFilledToAdd))
+                {
+                    storesFilled.Add(storeFilledToAdd);
+                }
             }
 
-            company.setStores(storesFilled);
-
-            return company;
+            return true;
         }
-        public static Store fillStoreInformation(Store store)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="postalCode"></param>
+        /// <param name="zipCodeApiToken"></param>
+        /// <param name="store"></param>
+        /// <returns></returns>
+        private static bool FillStoreInformation(string postalCode, string zipCodeApiToken, out Store storeFilledToAdd)
         {
+            storeFilledToAdd = new Store(postalCode);
+            
             HttpClient client = new HttpClient();
-            string key = "de744d20-bb62-11ec-bc34-ab9b8c173a58";
-
-            string storePostalCode = store.getPostalCode();
-
-            string content = client.GetStringAsync($"https://app.zipcodebase.com/api/v1/search?apikey={key}&codes={storePostalCode}").Result;
-
+            
+            string content = client.GetStringAsync($"https://app.zipcodebase.com/api/v1/search?apikey={zipCodeApiToken}&codes={postalCode}").Result;
+            
             JObject json = JObject.Parse(content);
+            
 
-            if (json["query"] == null || json["query"].Count() == 0)
+            if (json == null || json["query"] == null || json["query"].Count() == 0)
             {
-                return store;
+                return false;
             }
+
             try
             {
-                string latitude = json["results"][storePostalCode][0]["latitude"].ToString();
-                string longitude = json["results"][storePostalCode][0]["longitude"].ToString();
+                if (json["results"][postalCode][0]["latitude"].Type != JTokenType.Null && json["results"][postalCode][0]["longitude"].Type != JTokenType.Null)
+                {
+                    string latitude = json["results"][postalCode][0]["latitude"].ToString();
+                    string longitude = json["results"][postalCode][0]["longitude"].ToString();
 
-                store.setLocation(new Location(float.Parse(latitude, CultureInfo.InvariantCulture.NumberFormat), float.Parse(longitude, CultureInfo.InvariantCulture.NumberFormat)));
+                    storeFilledToAdd.Location = new Location(float.Parse(latitude, CultureInfo.InvariantCulture.NumberFormat), float.Parse(longitude, CultureInfo.InvariantCulture.NumberFormat));
+                }
 
-                string city = json["results"][storePostalCode][0]["city"].ToString();
-                string country = json["results"][storePostalCode][0]["country_code"].ToString();
-                string state = json["results"][storePostalCode][0]["state"].ToString();
-                string province = json["results"][storePostalCode][0]["province"].ToString();
+                string city = string.Empty;
+                string country = string.Empty;
+                string state = string.Empty;
+                string province = string.Empty;
 
-                store.fillStoreInformation(city, country, state, province);
+                if (json["results"][postalCode][0]["city"].Type != JTokenType.Null)
+                {
+                    city = json["results"][postalCode][0]["city"].ToString();
+                }
+
+                if (json["results"][postalCode][0]["country_code"].Type != JTokenType.Null)
+                {
+                    country = json["results"][postalCode][0]["country_code"].ToString();
+                }
+
+                if (json["results"][postalCode][0]["state"].Type != JTokenType.Null)
+                {
+                    state = json["results"][postalCode][0]["state"].ToString();
+                }
+
+                if (json["results"][postalCode][0]["province"].Type != JTokenType.Null)
+                {
+                    province = json["results"][postalCode][0]["province"].ToString();
+                }
+
+                storeFilledToAdd.FillStoreInformation(city, country, state, province);
+
+                return true;
             }
-            catch (System.ArgumentException e)
+            catch (Exception)
             {
-                return store;
+                return false;
             }
-
-            return store;
         }
+
+        #endregion
     }
 }

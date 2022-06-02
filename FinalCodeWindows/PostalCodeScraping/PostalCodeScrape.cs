@@ -8,77 +8,137 @@ using CompanyGetStoreLink;
 
 namespace PostalCodeScraping
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PostalCodeScrapingClass
     {
-        private static Dictionary<string, Regex> postalCodesTemplates = new Dictionary<string, Regex>() {
-            {"pt", new Regex("[1-9][0-9]{3}-[0-9]{3}")},
-            {"en", new Regex("[0-9]{4}-[0-9]{3}")},
-        };
-        public static Company getStoresPostalCodes(Company company)
+        #region Methods
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="companyName"></param>
+        /// <param name="chromeDriver"></param>
+        /// <returns></returns>
+        public static bool GetStoresPostalCodes(string companyName, string chromeDriverPath, Dictionary<int, string> storeLinkKeyWords, Regex postalCodeTemplate, out Company company, out string errorMessage)
         {
-            List<Store> stores = new List<Store>();
+            company = new Company(companyName);
 
-            IWebDriver driver = Driver.initializeDriver("C:\\Users\\Pedro\\MEOCloud", false);
-
-            CompanyGetStoreLinkClass.getCompanyInformation(driver, company);
-
-            company.showInfo();
-
-            string storeInformationLink = company.getStoresInformationLink();
-            if (storeInformationLink == "")
+            if (string.IsNullOrEmpty(companyName) || string.IsNullOrEmpty(chromeDriverPath) || postalCodeTemplate==null || storeLinkKeyWords==null || storeLinkKeyWords.Count==0)
             {
-                return company;
+                errorMessage = "Invalid parameters in function GetStoresPostalCodes call";
+                return false;
             }
-            driver.Navigate().GoToUrl(storeInformationLink);
+            
 
-            List<string> zipCodes = getPostalCodes(driver);
+            IWebDriver driver = Driver.InitializeDriver(chromeDriverPath, false);
 
-            foreach (string zipCode in zipCodes)
+            try
             {
-                Console.WriteLine("postalCodeFound");
-                Store storeToAdd = new Store(zipCode);
-                stores.Add(storeToAdd);
-                Console.WriteLine(zipCode);
+                string companyWebLink = string.Empty;
+                string companyStoresWebLink = string.Empty;
+
+                if(!CompanyGetStoreLinkClass.GetCompanyWebLinks(driver, companyName, storeLinkKeyWords, out companyWebLink, out companyStoresWebLink, out errorMessage))
+                {
+                    return false;
+                }
+
+                company.CompanyWebLink = companyWebLink;
+                company.CompanyStoresWebLink = companyStoresWebLink;
+
+
+                List<Store> stores;
+                if (!GetStores(driver, companyStoresWebLink, postalCodeTemplate, out stores, out errorMessage))
+                {
+                    Driver.CloseDriver(driver);
+                    return false;
+                }
+
+                company.Stores = stores;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                Driver.CloseDriver(driver);
+                return false;
             }
 
-            Driver.closeDriver(driver);
-
-            company.setStores(stores);
-            return company;
+            Driver.CloseDriver(driver);
+            return true;
         }
 
-        public static List<string> getPostalCodes(IWebDriver driver)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="companyStoresWebLink"></param>
+        /// <param name="postalCodeRegex"></param>
+        /// <param name="stores"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
+        private static bool GetStores(IWebDriver driver, string companyStoresWebLink, Regex postalCodeRegex, out List<Store> stores, out string errorMessage)
         {
-            //string fullPageHtml = driver.FindElement(By.TagName("body")).Text;
-            string fullPageHtml = driver.PageSource;
-            List<string> zipcodes = new List<string> { };
+            stores = new List<Store>();
 
-            Regex postalCodeRegex = getPostalCodesTemplate("pt");
-            if (postalCodeRegex == null)
+            List<string> zipCodes;
+            if (!GetPostalCodes(driver, companyStoresWebLink, postalCodeRegex, out zipCodes, out errorMessage))
             {
-                return zipcodes; //return the empty list
+                return false;
             }
 
-            //add zipcodes found using regex excluding repeated values
-            foreach (Match match in postalCodeRegex.Matches(fullPageHtml))
+            foreach(string zipCode in zipCodes)
             {
-                if (!zipcodes.Contains(match.Value))
+                stores.Add(new Store(zipCode));
+            }
+
+            if(stores.Count == 0)
+            {
+                errorMessage = "No store was found.";
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <param name="companyStoresWebLink"></param>
+        /// <param name="postalCodeRegex"></param>
+        /// <param name="zipCodes"></param>
+        /// <param name="errorMessage"></param>
+        /// <returns></returns>
+        private static bool GetPostalCodes(IWebDriver driver, string companyStoresWebLink, Regex postalCodeRegex, out List<string> zipCodes, out string errorMessage)
+        {
+            errorMessage = string.Empty;
+            zipCodes = new List<string>();
+
+            try
+            {
+                driver.Navigate().GoToUrl(companyStoresWebLink);
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return false;
+            }
+
+            string fullCompanyStoreLinkSource = driver.PageSource;
+
+            //add zipcodes found using regex excluding repeated values
+            foreach (Match match in postalCodeRegex.Matches(fullCompanyStoreLinkSource))
+            {
+                if (!zipCodes.Contains(match.Value))
                 {
-                    zipcodes.Add(match.Value);
+                    zipCodes.Add(match.Value);
                 }
             }
 
-            return zipcodes;
+            return true;
         }
 
-        public static Regex getPostalCodesTemplate(string country)
-        {
-            if (!postalCodesTemplates.ContainsKey(country))
-            {
-                return null;
-            }
-
-            return postalCodesTemplates[country];
-        }
+        #endregion
     }
 }

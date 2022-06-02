@@ -62,7 +62,7 @@ namespace StationMeteo
         }
 
 
-            public static async Task<String> GetDataMeteo(String[] requestParameters, String apiKey)
+        public static async Task<String> GetDataMeteo(String[] requestParameters, String apiKey)
         {
             HttpClient? client = new HttpClient();
             HttpRequestMessage? request = new HttpRequestMessage
@@ -70,10 +70,10 @@ namespace StationMeteo
 				Method = HttpMethod.Get,
 				RequestUri = new Uri($"https://meteostat.p.rapidapi.com/stations/nearby?lat={requestParameters[0]}&lon={requestParameters[1]}"),
 				Headers =
-	{
-		                    { "X-RapidAPI-Host", "meteostat.p.rapidapi.com" },
-		                    { "X-RapidAPI-Key", apiKey },
-	},
+	            {
+		            { "X-RapidAPI-Host", "meteostat.p.rapidapi.com" },
+		            { "X-RapidAPI-Key", apiKey },
+	            },
 			};
 			using (HttpResponseMessage? response = await client.SendAsync(request))
 			{

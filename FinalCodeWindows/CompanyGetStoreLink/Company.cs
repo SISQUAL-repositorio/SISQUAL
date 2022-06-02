@@ -1,72 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CompanyGetStoreLink
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Company
     {
-        private string companyName = "";
-        private string companyWebPageHtml = "";
-        private string storesInformationLink = "";
-        private List<Store> stores = new List<Store>();
+        
+        #region Properties
 
+        private string companyName;
+        private string companyWebLink;
+        private string companyStoresWebLink;
+        private List<Store> stores;
+
+        public string CompanyName
+        {
+            get { return companyName; }
+            set { companyName = value; }
+        }
+
+        public string CompanyWebLink
+        {
+            get { return companyWebLink; }
+            set { companyWebLink = value; }
+        }
+
+        public string CompanyStoresWebLink
+        {
+            get { return companyStoresWebLink; }
+            set { companyStoresWebLink = value; }
+        }
+
+        public List<Store> Stores
+        {
+            get { return stores; }
+            set { stores = value; }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        public Company()
+        {
+            companyName = string.Empty;
+            companyWebLink = string.Empty;
+            companyStoresWebLink = string.Empty;
+            stores = new List<Store>();
+        }
+        
         public Company(string companyName)
+            : this()
         {
             this.companyName = companyName;
         }
-        public void setCompanyWebPageHtml(string companyWebPageHtml)
-        {
-            this.companyWebPageHtml = companyWebPageHtml;
-        }
-        public void setStoresInformationLink(string storesInformationLink)
-        {
-            this.storesInformationLink = storesInformationLink;
-        }
-        public void setStores(List<Store> stores)
-        {
-            this.stores = stores;
-        }
-        public string getCompanyName()
-        {
-            return this.companyName;
-        }
-        public string getCompanyWebPageHtml()
-        {
-            return this.companyWebPageHtml;
-        }
-        public string getStoresInformationLink()
-        {
-            return this.storesInformationLink;
-        }
-        public List<Store> getStores()
-        {
-            return this.stores;
-        }
-        public void showInfo()
-        { //just for debugging, delete when dll
-            Console.WriteLine("Company Name: " + this.companyName);
-            Console.WriteLine("Company Web Page: " + this.companyWebPageHtml);
-            Console.WriteLine("Stores Information Link: " + this.storesInformationLink);
-            foreach(Store store in stores)
-            {
-                store.showInfo();
-            }
-        }
 
-        public string toString()
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Puts all the information in a string ready to be printed
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
         {
-            string output = "";
-            output += "Company Name: " + this.companyName + "\n";
-            output += "Company Web Page: " + this.companyWebPageHtml + "\n";
-            output += "Stores Information Link: " + this.storesInformationLink + "\n";
+            string output = string.Empty;
+
+            output += "Company name: " + this.companyName + "\r\n";
+            output += "Company web link: " + this.companyWebLink + "\r\n";
+            output += "Stores information link: " + this.companyStoresWebLink + "\r\n";
+            output += "Total number of stores: " + this.stores.Count + "\r\n\r\n";
+
             foreach (Store store in stores)
             {
-                output += store.toString() + "\n";
+                output += store.ToString() + "\r\n";
             }
+
             return output;
         }
+
+        #endregion
     }
 }

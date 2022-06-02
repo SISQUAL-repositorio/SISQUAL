@@ -1,0 +1,2 @@
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic_NearbyStation.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic_NearbyStation.csproj.CoreCompileInputs.cache

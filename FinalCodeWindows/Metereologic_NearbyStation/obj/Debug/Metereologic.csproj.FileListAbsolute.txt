@@ -1,0 +1,11 @@
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\Metereologic_NearbyStation.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\Metereologic_NearbyStation.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\CompanyGetStoreLink.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\CompanyGetStoreLink.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic.csproj.CopyComplete
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic_NearbyStation.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\Metereologic_NearbyStation\obj\Debug\Metereologic_NearbyStation.pdb

@@ -1,0 +1,15 @@
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\CompanyGetStoreLink.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\CompanyGetStoreLink.pdb
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.AssemblyReference.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.Properties.Resources.resources
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.GenerateResource.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CopyComplete
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\Pedro\MEOCloud\Universidade\Licenciatura\3Ano\2Semestre\Projeto Integrador\dev_sisqual\FinalCodeWindows\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
