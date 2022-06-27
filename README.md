@@ -1,3 +1,4 @@
 # dev_sisqual
 Projeto de estágio
-teste
+
+Projetos da equipa Development Trainees
