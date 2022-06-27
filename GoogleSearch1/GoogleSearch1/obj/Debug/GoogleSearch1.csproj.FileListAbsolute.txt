@@ -1,0 +1,11 @@
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\bin\Debug\GoogleSearch1.exe.config
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\bin\Debug\GoogleSearch1.exe
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\bin\Debug\GoogleSearch1.pdb
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.csproj.AssemblyReference.cache
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.csproj.CoreCompileInputs.cache
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.exe
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.pdb
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pedro.Costa\source\repos\GoogleSearch1\GoogleSearch1\obj\Debug\GoogleSearch1.csproj.CopyComplete

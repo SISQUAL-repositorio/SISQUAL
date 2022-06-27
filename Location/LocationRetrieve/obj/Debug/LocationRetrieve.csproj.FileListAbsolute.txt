@@ -1,0 +1,7 @@
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\bin\Debug\LocationRetrieve.pdb
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\obj\Debug\LocationRetrieve.csproj.AssemblyReference.cache
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\obj\Debug\LocationRetrieve.csproj.CoreCompileInputs.cache
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\obj\Debug\LocationRetrieve.pdb
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\bin\Debug\LocationRetrieve.exe
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\obj\Debug\LocationRetrieve.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pedro.Costa\source\repos\Location\LocationRetrieve\obj\Debug\LocationRetrieve.exe

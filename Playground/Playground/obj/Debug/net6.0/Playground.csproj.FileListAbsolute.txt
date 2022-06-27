@@ -1,0 +1,15 @@
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\bin\Debug\net6.0\Playground.exe
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\bin\Debug\net6.0\Playground.deps.json
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\bin\Debug\net6.0\Playground.runtimeconfig.json
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\bin\Debug\net6.0\Playground.dll
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\bin\Debug\net6.0\Playground.pdb
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.csproj.AssemblyReference.cache
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.AssemblyInfoInputs.cache
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.AssemblyInfo.cs
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.csproj.CoreCompileInputs.cache
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.dll
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\refint\Playground.dll
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.pdb
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\Playground.genruntimeconfig.cache
+C:\Users\Pedro.Costa\source\repos\Playground\Playground\obj\Debug\net6.0\ref\Playground.dll
